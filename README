@@ -1,0 +1,13 @@
+Afin d'exécuter les programmes, il suffit dans un premier temps de télécharger les fichiers client.c et server.c codés 
+avec windows socket. Par la suite, il convient d'exécuter les fichiers en question sur le terminal windows avec les 
+commandes “gcc server.c -o server -lpthread -lws2_32” et “gcc client.c -o client -lpthread -lws2_32”.
+Une fois ces commandes exécutées, le programme va compiler et on pourra alors établir la communication entre 
+les 2 entités. Il convient alors d’ouvrir deux terminaux. L'un dans lequel on doit entrer la commande 
+./server 4444  (4444 peut être remplacé par toute autre série de 4 chiffres) pour activer le serveur, et
+l’autre pour connecter un client (exemple: ./client tony 4444).  A ce niveau, le client est invité à entrer une 
+série de 0 et de 1 avec son clavier et le programme se charge de l’encoder puis d'effectuer le processus d’envoie au serveur ou il sera décodé.
+
+Exemple d’input et d’output chez le client
+10001010 -> +000-0+0
+0000000010 -> 000-+0+-+0
+100000000000100 -> +000+-0-+000-00
