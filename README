@@ -1,3 +1,20 @@
+This code allows entities to send encoded datas between each other, and then using the B8ZS technique to decode
+
+In order to run the programs, it is sufficient to first download the encoded client.c and server.c files 
+with Windows Socket. Subsequently, it is necessary to run the files in question on the Windows terminal with the 
+commands "gcc server.c -o server -lpthread -lws2_32" and "gcc client.c -o client -lpthread -lws2_32".
+Once these commands are executed, the program will compile and we can then establish communication between 
+the 2 entities. It is then necessary to open two terminals. One in which you have to enter the order 
+./server 4444 (4444 can be replaced by any other 4-digit series) to enable the server, and
+the other to connect a client (example: ./client Tony 4444).  At this level, the client is prompted to enter a 
+series of 0 and 1 with its keyboard and the program is responsible for encoding it and then performing the process of sending to the server where it will be decoded.
+
+Example of input and output at the customer
+10001010 -> +000-0+0
+0000000010 -> 000-+0+-+0
+100000000000100 -> +000+-0-+000-00
+
+
 Afin d'exécuter les programmes, il suffit dans un premier temps de télécharger les fichiers client.c et server.c codés 
 avec windows socket. Par la suite, il convient d'exécuter les fichiers en question sur le terminal windows avec les 
 commandes “gcc server.c -o server -lpthread -lws2_32” et “gcc client.c -o client -lpthread -lws2_32”.
